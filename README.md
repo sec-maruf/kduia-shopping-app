@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# Shopping Cart Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React-based Shopping Cart application. The project demonstrates the creation and management of a simple shopping cart using React and Redux for state management. 
 
-## Available Scripts
+## Objectives
 
-In the project directory, you can run:
+- Set up a React project.
+- Put UI components in place.
+- Render the created components and context in `App.js`.
+- View the application in the browser.
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Prerequisites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Node.js and npm installed on your machine.
+- A GitHub account to fork and clone the repository.
 
-### `npm test`
+### Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Fork the Repository**
+   - Fork the project repository from [here](https://github.com/ibm-developer-skills-network/kduia-shopping-app.git).
 
-### `npm run build`
+2. **Clone the Repository**
+   - Open a terminal and run the following command:
+     ```sh
+     git clone <your_repo_name>
+     ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. **Install Dependencies**
+   - Navigate to the project directory:
+     ```sh
+     cd kduia-shopping-app
+     ```
+   - Install the required npm packages:
+     ```sh
+     npm install
+     ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Project Structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The project is divided into several components:
 
-### `npm run eject`
+- **CartValue**: Displays the total value of the items in the cart.
+- **ExpenseItem**: Represents an individual item in the cart.
+- **ExpenseList**: Displays a list of `ExpenseItem` components.
+- **ItemSelected**: Allows users to add or reduce the quantity of items.
+- **Location**: Changes the currency/location for pricing.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Components Implementation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### AppContext.js
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Set up the initial state for expenses and location.
+- Create a reducer to handle state updates based on actions (`ADD_QUANTITY`, `RED_QUANTITY`, `DELETE_ITEM`, `CHG_LOCATION`).
+- Provide context to the components.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### CartValue.js
 
-## Learn More
+- Use context to get the total expenses and display it with the selected currency.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### ExpenseList.js
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Use context to get the list of expenses and display them using `ExpenseItem` components.
 
-### Code Splitting
+### ExpenseItem.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Display individual expense details.
+- Handle the deletion of an item from the cart.
 
-### Analyzing the Bundle Size
+### ItemSelected.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Allow users to select an item and adjust its quantity.
+- Dispatch actions to update the state based on user input.
 
-### Making a Progressive Web App
+### Location.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Allow users to select and change the location/currency for the cart.
 
-### Advanced Configuration
+## Running the Application
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Ensure you are in the project directory:
+   ```sh
+   cd kduia-shopping-app
